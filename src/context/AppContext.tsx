@@ -100,7 +100,7 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'aicte_approval_system_v1';
+const STORAGE_KEY = 'aicte_approval_system_v2';
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Try loading from localStorage or fallback to defaults

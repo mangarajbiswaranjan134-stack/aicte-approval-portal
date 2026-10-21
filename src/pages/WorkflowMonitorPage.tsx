@@ -30,7 +30,8 @@ export const WorkflowMonitorPage: React.FC = () => {
     activeUser, 
     transitionWorkflow,
     setActiveTab,
-    setSelectedApplicationId
+    setSelectedApplicationId,
+    addToast
   } = useApp();
 
   const [selectedAppForTest, setSelectedAppForTest] = useState(applications[0]?.id || '');
@@ -300,20 +301,53 @@ export const WorkflowMonitorPage: React.FC = () => {
               ? 'bg-teal-950/80 border-teal-700 text-teal-200' 
               : 'bg-rose-950/80 border-rose-700 text-rose-200'
           }`}>
-            <div className="flex items-center gap-2 font-bold mb-1">
-              {testResult.allowed ? (
-                <>
-                  <CheckCircle2 className="h-4 w-4 text-teal-400" />
-                  <span className="text-teal-300">Transition Allowed</span>
-                </>
-              ) : (
-                <>
-                  <AlertTriangle className="h-4 w-4 text-rose-400" />
-                  <span className="text-rose-300">Transition Blocked by Governance Policy</span>
-                </>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 font-bold mb-1">
+                {testResult.allowed ? (
+                  <>
+                    <CheckCircle2 className="h-4 w-4 text-teal-400" />
+                    <span className="text-teal-300">Transition Permitted under Statutory Rules</span>
+                  </>
+                ) : (
+                  <>
+                    <AlertTriangle className="h-4 w-4 text-rose-400" />
+                    <span className="text-rose-300">Transition Blocked by Governance Policy</span>
+                  </>
+                )}
+              </div>
+              {testResult.allowed && (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setSelectedApplicationId(selectedAppForTest);
+                      setActiveTab('applications');
+                    }}
+                    className="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] font-medium rounded border border-slate-700 transition-colors"
+                  >
+                    Open Dossier
+                  </button>
+                  <button
+                    onClick={() => {
+                      transitionWorkflow(
+                        selectedAppForTest,
+                        testTargetStage,
+                        `Transition validated and executed via Workflow Policy Engine by ${activeUser.name} (${activeUser.role})`
+                      );
+                      addToast(
+                        'Stage Advanced Successfully',
+                        `Application transitioned to ${testTargetStage}`,
+                        'success'
+                      );
+                      setTestResult(null);
+                    }}
+                    className="px-3 py-1 bg-teal-600 hover:bg-teal-500 text-white text-[11px] font-bold rounded shadow-xs transition-colors flex items-center gap-1"
+                  >
+                    <CheckCircle2 className="h-3.5 w-3.5" /> Advance Workflow Now
+                  </button>
+                </div>
               )}
             </div>
-            <p className="text-[11px] opacity-90">{testResult.reason}</p>
+            <p className="text-[11px] opacity-90 mt-1">{testResult.reason}</p>
           </div>
         )}
       </div>

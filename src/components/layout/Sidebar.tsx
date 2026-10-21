@@ -152,15 +152,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-sm text-white tracking-tight">AICTE</span>
-                <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700">
-                  GOVT OF INDIA
+                <span className="font-extrabold text-sm text-white tracking-tight">ApprovaLens</span>
+                <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-blue-900/80 text-blue-300 border border-blue-600">
+                  SIH26262
                 </span>
               </div>
               <p className="text-[11px] text-slate-300 font-semibold truncate leading-tight">
-                Approval Intelligence
+                AICTE Approval Intelligence
               </p>
-              <p className="text-[9px] text-slate-400 truncate">Ministry of Education</p>
+              <p className="text-[9px] text-slate-400 truncate">Ministry of Education • Govt. of India</p>
             </div>
           </div>
           <button
