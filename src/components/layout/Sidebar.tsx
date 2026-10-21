@@ -142,11 +142,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
         {/* Brand Header */}
         <div className="p-4 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* Official Council Emblem Mark */}
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-700 to-indigo-900 flex items-center justify-center text-amber-300 shadow-md border border-blue-500/30">
-              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 3.18l6 3.33v4.49c0 4.1-2.67 7.92-6 9-3.33-1.08-6-4.9-6-9V8.51l6-3.33zM11 7h2v6h-2V7zm0 8h2v2h-2v-2z" />
-              </svg>
+            {/* Official AICTE Council Emblem Logo */}
+            <div className="w-10 h-10 rounded-lg bg-white p-0.5 flex items-center justify-center shadow-md border border-slate-700 flex-shrink-0">
+              <img 
+                src="/aicte-logo.png" 
+                alt="AICTE Official Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <div className="flex items-center gap-1.5">

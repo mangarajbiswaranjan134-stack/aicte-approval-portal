@@ -93,7 +93,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleMobileSidebar }) =
 
       {/* Main Navbar Bar */}
       <div className="px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-        {/* Left: Mobile hamburger & Breadcrumbs */}
+        {/* Left: Mobile hamburger, AICTE Logo & Breadcrumbs */}
         <div className="flex items-center gap-3">
           <button
             onClick={onToggleMobileSidebar}
@@ -102,6 +102,13 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleMobileSidebar }) =
           >
             <Menu className="h-5 w-5" />
           </button>
+          
+          <img 
+            src="/aicte-logo.png" 
+            alt="AICTE Logo" 
+            className="h-9 w-9 object-contain hidden sm:block border border-slate-200 rounded-lg p-0.5 bg-white shadow-xs" 
+          />
+
           <div>
             <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
               <span>Portal</span>
