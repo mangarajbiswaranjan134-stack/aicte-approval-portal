@@ -154,7 +154,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-sm text-white tracking-tight">ApprovaLens</span>
                 <span className="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-blue-900/80 text-blue-300 border border-blue-600">
-                  SIH26262
+                  APH 2026-27
                 </span>
               </div>
               <p className="text-[11px] text-slate-300 font-semibold truncate leading-tight">

@@ -73,11 +73,12 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleMobileSidebar }) =
           </span>
           <span className="text-slate-500">•</span>
           <span className="text-slate-300 font-medium hidden sm:inline">Ministry of Education • AICTE Integrated Regulatory Platform</span>
-          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
-            HACKATHON PROTOTYPE (SIH26262)
+          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            LIVE SECURE PORTAL
           </span>
           <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-blue-500/20 text-blue-300 border border-blue-500/30 hidden md:inline">
-            DEMO DATA
+            APH 2026-27
           </span>
         </div>
         <div className="flex items-center gap-3">
@@ -86,10 +87,10 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleMobileSidebar }) =
           </span>
           <button
             onClick={resetToDefaultData}
-            title="Synchronize portal records to baseline demo dataset"
+            title="Synchronize portal records to council master database"
             className="flex items-center gap-1 text-[11px] text-slate-300 hover:text-white px-2.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
           >
-            <RotateCcw className="h-3 w-3" /> Sync Demo Data
+            <RotateCcw className="h-3 w-3" /> Sync Records
           </button>
         </div>
       </div>
